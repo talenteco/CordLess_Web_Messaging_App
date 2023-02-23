@@ -1,0 +1,26 @@
+.contactName{
+    background-color: rgb(102, 142, 142);
+    border: 1px solid rgb(102, 142, 142);
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    margin-left: 1px;
+    width: 100px;
+}
+
+.parent{
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+    
+
+.child{
+    
+    display: inline-block;
+    border: 1px solid rgb(9, 3, 3);
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    
+}

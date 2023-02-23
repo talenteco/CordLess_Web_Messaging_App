@@ -1,31 +1,17 @@
-import React, { Component } from "react";
+import React from 'react';
+import '../mainStyle.css'
 
 //to do: bind function eventOnClick to object
 
-class individualContacts extends Component{
+export default function IndividualContact({nameOfContact, onClickFunction}) {
 
-    constructor(contactName, valueName){
-        super(contactName, valueName)
-        this.state = 
-        {contactName : contactName,
-        valueName : valueName}
-    }
-
-    eventOnClick(){
-        console.log("I have been clicked");
-    }
-
-    individualContact() {
     console.log("Function Called")
-        return(
-            <div className="w3-container w3-red">
-            <button key={this.state.valueName} className="w3-ripple" type = 'button' onClick={this.eventOnClick} >Hello World from {this.state.contactName}</button>
-            </div>
-        )
-           
-    }
+    return(
+        <div className="w3-container w3-red">
+        <button key={nameOfContact} className="contactName" type = 'button' onClick={onClickFunction} >{nameOfContact}</button>
+        </div>
+    )
+        
+}  
 
-  
-};
 
-export default individualContacts;
