@@ -9,25 +9,28 @@ const root = createRoot(domNode);
 
 export default function MainPage(){
     
-    const contactName = ["Utkarsh", "Daniel"];
+    const contactNames = ["Utkarsh", "Daniel", "Amol", "Ashish"];
     const [messageBoardDisplay, setMessageBoardDisplay] = useState("This is the Message Board");
 
-    function handleOnClick(){
-        setMessageBoardDisplay("Hello, this is where your messages with "+ contactName[0]+ "'s will display!");
+    function handleOnClick(nameOfContactForFunction){
+        setMessageBoardDisplay("Hello, this is where your messages with "+ nameOfContactForFunction + "'s will display!");
         console.log("I am being clicked");
     }
 
 //add function to map multple contact names to buttons
 return(
-    <div className='parent'>
-        <div className = "child">
-            
-            <IndividualContact  nameOfContact = {contactName[0]} onClickFunction={handleOnClick} />
+    <div>
+        <h1>CordLess</h1>
+        <div className='parent'>
+            <div className = "child"> 
+                {contactNames.map( function(contactName){return <IndividualContact  nameOfContact = {contactName} onClickFunction={()=>{handleOnClick(contactName)}} />})}
+            </div>
+            <div className = "child">
+                <MessageBoard  displayOfMessageBoard={messageBoardDisplay} />
+            </div>
         </div>
-        <div className = "child">
-            <MessageBoard  displayOfMessageBoard={messageBoardDisplay} />
-        </div>
-    </div>
+    </div>   
+        
     );;
 
 }
