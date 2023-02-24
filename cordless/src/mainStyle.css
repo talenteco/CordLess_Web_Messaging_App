@@ -5,7 +5,7 @@
     margin-bottom: 1px;
     margin-right: 1px;
     margin-left: 1px;
-    width:250px;
+    width:200px;
     height: 25px;
     text-align: center;
 }
@@ -13,20 +13,95 @@
 .parent{
     border: 1px solid black;
     margin: 1rem;
-    padding: 2rem 2rem;
     text-align: center;
 }
     
 
-.child{
+.childContact{
     
     display: inline-block;
     border: 1px solid rgb(9, 3, 3);
-    padding: 1rem 1rem;
+    padding: 0;
     vertical-align: middle;
     overflow: auto;
     text-overflow: ellipsis;
     width:250px;
     height: 250px ;
+    margin: 10px;
     
+}
+
+
+.childMessageBoard{
+    
+    display: inline-block;
+    border: 1px solid rgb(9, 3, 3);
+    padding: 0;
+    vertical-align: middle;
+    width:250px;
+    height: 250px ;
+    margin: 10px;
+    
+}
+
+.messageBoard{
+    
+    background: rgb(203, 178, 226);
+    display: inline-block;
+    border: 1px solid rgb(9, 3, 3);
+    padding: 0;
+    vertical-align: middle;
+    overflow: auto;
+    text-overflow: ellipsis;
+    width:200px;
+    height: 200px ;
+    margin: 10px;
+    
+}
+
+.messages{
+
+
+    box-shadow: 5px 2px 2px rgb(99, 15, 178);
+    border: 1px; 
+    border-radius: 5px;
+
+
+}
+
+.messagesLeft{
+    text-align: left;
+    border-radius: 5px;
+}
+
+.messagesRight{
+    text-align: right;
+    border-radius: 5px;
+
+}
+
+.messagesDiv{
+    text-align: right;
+}
+
+
+.messageSendTextField{
+    padding: 1rem 1rem;
+    width: 200px;
+    height:220px;
+}
+
+.header{
+
+    margin: 0;
+    padding: 0;
+    background-color: blueviolet;
+
+
+}
+
+.entirePage{
+
+    background-color: blueviolet;
+
 }
