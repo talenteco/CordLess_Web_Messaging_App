@@ -1,12 +1,12 @@
 import {createRoot} from 'react-dom/client';
-import MainPage from './components/MainPage';
+import MainUser from './components/mainUser';
 
 const port=4000
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
 
 root.render(
-    < MainPage className= "entirePage" portForMain={port} />
+    < MainUser />
 );
 
 

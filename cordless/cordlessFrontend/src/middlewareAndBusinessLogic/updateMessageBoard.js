@@ -1,14 +1,8 @@
 import UpdateMessages from './updateMessages';
-import findCurrentUser from './updateCurrentUser';
 
 
-export default async function updateMessageBoard(port){
-    
-    console.log("In message board update")
+export default async function updateMessageBoard(port, curentUserFromMain){
     const values= await UpdateMessages(port);
-    const curentUser = findCurrentUser();
-
-    //console.log("In message board update 2222")
     const messages = values
     const messagesLength = values.length
 
@@ -22,9 +16,9 @@ export default async function updateMessageBoard(port){
         let counter = 0;
         let prevContact;
 
-        if((curentUser===messages[j].sender)){
+        if((curentUserFromMain===messages[j].sender)){
             unkownContact= messages[j].receiver
-        } else if((curentUser===messages[j].receiver)){
+        } else if((curentUserFromMain===messages[j].receiver)){
             unkownContact= messages[j].sender
         }
 
@@ -40,9 +34,10 @@ export default async function updateMessageBoard(port){
             prevContact=unkownContact
             contacts.push(prevContact)
             final_messageBoardMessages[prevContact]=[]
+
         }
 
-        if(curentUser===messages[j].sender){
+        if(curentUserFromMain===messages[j].sender){
             identifier = "user"
         }
         else{
@@ -51,11 +46,8 @@ export default async function updateMessageBoard(port){
         const temp={"message":messages[j].messages, "identifier":identifier}
         
         final_messageBoardMessages[prevContact].push(temp)
-        // console.log("ypopp "+JSON.stringify(final_messageBoardMessages))
 
     }
-
-    //console.log("hiiiiyaa "+JSON.stringify(final_messageBoardMessages))
     return(final_messageBoardMessages)
 
 

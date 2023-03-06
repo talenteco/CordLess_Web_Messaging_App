@@ -120,3 +120,11 @@
     background-color: blueviolet;
 
 }
+
+.currentUser{
+    display: inline
+}
+
+.instructions{
+    display: inline
+}
